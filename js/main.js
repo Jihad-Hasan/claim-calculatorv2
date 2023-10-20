@@ -838,6 +838,23 @@ function updateBothprice() {
   $(".bothprice1").text("£ " + (parseInt(totalPrice1 + totalPrice2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")));
 }
 
+// Function to get URL parameters by name
+function getParameterByName(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+// Retrieve the values of the desired URL parameters
+
+// Use the retrieved parameter values as needed
+// console.log('UTM Source:', utmSource);
+// console.log('UTM Medium:', utmMedium);
+// console.log('UTM Campaign:', utmCampaign);
+// console.log('UTM Term:', utmTerm);
+// console.log('UTM Content:', utmContent);
+// console.log('UTM Refcode:', refCode);
+
+
 // Object to hold all the data
 const formData = {
   energySupplier: '',
@@ -858,6 +875,12 @@ const formData = {
   email: '',
   phoneNumber: '',
   signatureImage: '',
+  utmSource: '',
+  utmMedium: '',
+  utmCampaignn: '',
+  utmTerm: '',
+  utmContent: '',
+  refCode: '',
 };
 
 function sendToWebhook(data) {
@@ -879,11 +902,16 @@ function sendToWebhook(data) {
 
 }
 
-
 function updateSelectedValues(step) {
   switch (step) {
     case 1:
       formData.energySupplier = $("#txt-search").val();
+      formData.utmSource = getParameterByName('utm_source');
+      formData.utmMedium = getParameterByName('utm_medium');
+      formData.utmCampaign = getParameterByName('utm_campaign');
+      formData.utmTerm = getParameterByName('utm_term');
+      formData.utmContent = getParameterByName('utm_content');
+      formData.refCode = getParameterByName('ref_code');
       break;
     case 2:
       formData.selectedUtility = $("input[name='utility']:checked").val();
