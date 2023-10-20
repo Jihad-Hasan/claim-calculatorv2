@@ -272,6 +272,9 @@ $("input[name='form2']").on("change", function () {
 });
 
 $(".next").on("click", function () {
+  setTimeout(function () {
+    $(".banner-section").css("display","none")
+  }, 2000)
   var nextstep = false;
   if (step == 2) {
     nextstep = checkForm("userinfo");
