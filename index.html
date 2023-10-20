@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claim Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/rangeslider-pure@0.4.4/dist/range-slider.css">
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <div class="container-fluid d-flex justify-content-center min-w">
+        <div class="col-11 col-offset-2">
+            <div class="container">
+                <div class="flex-container">
+                    <div>
+                        <h1 class="lplh-58" style="text-align: center;"><span style="color:#ffffff;"><span
+                                    style="font-size:48px;"><span
+                                        style="font-family:Montserrat;font-weight: 700;font-size: 48px;">Start You Claim
+                                        Today</span></span></span></h1>
+                        <p class="lplh-31" style="text-align: center;"><span style="color:#ffffff;"><span
+                                    style="font-size:26px;"><span style="font-family:Montserrat; font-size: 26px;">Find
+                                        Out How Much Your Claim Could Be Worth</span></span></span></p>
+                    </div>
+                    <div>
+                        <div class="lp-pom-image-container" style="overflow: hidden;"><img
+                                src="//image-service.unbounce.com/https%3A%2F%2Fapp.unbouncepreview.com%2Fpublish%2Fassets%2F8dca09ad-9419-4876-8cb9-44a32704ba75%2F94714d89-left-arrow-small_103c04w000000000000028.png?w=120&amp;h=176&amp;png8=true"
+                                alt=""
+                                data-src-desktop-1x="//image-service.unbounce.com/https%3A%2F%2Fapp.unbouncepreview.com%2Fpublish%2Fassets%2F8dca09ad-9419-4876-8cb9-44a32704ba75%2F94714d89-left-arrow-small_103c04w000000000000028.png?w=120&amp;h=176&amp;png8=true"
+                                data-src-desktop-2x="//image-service.unbounce.com/https%3A%2F%2Fapp.unbouncepreview.com%2Fpublish%2Fassets%2F8dca09ad-9419-4876-8cb9-44a32704ba75%2F94714d89-left-arrow-small_106o09s000000000000028.png?w=240&amp;h=352&amp;png8=true"
+                                data-src-desktop-3x="//image-service.unbounce.com/https%3A%2F%2Fapp.unbouncepreview.com%2Fpublish%2Fassets%2F8dca09ad-9419-4876-8cb9-44a32704ba75%2F94714d89-left-arrow-small_1000000000000000000028.png?png8=true"
+                                srcset="//image-service.unbounce.com/https%3A%2F%2Fapp.unbouncepreview.com%2Fpublish%2Fassets%2F8dca09ad-9419-4876-8cb9-44a32704ba75%2F94714d89-left-arrow-small_103c04w000000000000028.png?w=120&amp;h=176&amp;png8=true 1x, //image-service.unbounce.com/https%3A%2F%2Fapp.unbouncepreview.com%2Fpublish%2Fassets%2F8dca09ad-9419-4876-8cb9-44a32704ba75%2F94714d89-left-arrow-small_106o09s000000000000028.png?w=240&amp;h=352&amp;png8=true 2x, //image-service.unbounce.com/https%3A%2F%2Fapp.unbouncepreview.com%2Fpublish%2Fassets%2F8dca09ad-9419-4876-8cb9-44a32704ba75%2F94714d89-left-arrow-small_1000000000000000000028.png?png8=true 3x">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="progress mt-3" style="height: 30px">
+                <div class="progress-bar progress-bar-striped progress-bar-animated"
+                    style="font-weight: bold; font-size: 15px" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                </div>
+            </div>
+            <div class="card mt-3" id="step-one" style="display: block">
+                <div class="card-body step">
+                    <h1 class="fw-bold mb-3">
+                        Who is your energy supplier?
+                    </h1>
+                    <div class="searchfield pb-4">Names will appear as you type</div>
+                    <div class="searchfield input-group">
+                        <input id="txt-search" type="text" class="form-control border-style p-3"
+                            placeholder="Business Energy supplier" aria-label="Search"
+                            aria-describedby="button-addon2" />
+                        <button type="button"
+                            class="fw-bold action next c_btn btn border-style m-0 text-white btn-outline-secondary float-end"
+                            disabled="">
+                            Check My Claim
+                        </button>
+
+                    </div>
+                    <div id="filter-records" class="">
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+            <div class="mt-4">
+                <img src="./img/banner.png" class="img-fluid" style="height: 400px;" srcset="">
+            </div>
+
+            <div class="card mt-3 step" id="userinfo" style="display: none">
+                <div class="card-body">
+                    <h1 class="mb-4 fw-bold">
+                        About your energy supplier?
+                    </h1>
+                    <div>
+                        <h4 class="fs-1 mb-4 fw-noraml">Type of utility</h4>
+                        <div class="container-r">
+                            <form class="row">
+                                <div class="col-md-6">
+                                    <label>
+                                        <input type="radio" name="utility" id="gas" value="gas" />
+                                        <span class="error1">Gas</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="utility" id="electric" value="electric" />
+                                        <span class="error1">Electric</span>
+                                    </label>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label>
+                                        <input type="radio" name="utility" id="gande" value="gas & electric" />
+                                        <span class="error1">Gas & Electric</span>
+                                    </label>
+                                </div>
+                            </form>
+                            <div class="alert alert-danger" style="display: none;" id="alert1" role="alert">
+                                Please select the type of utility
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-3">
+                        <h4 class="fs-sm-1 mb-4 fw-noraml">Did you use a broker to purchase your energy?
+                        </h4>
+                        <fieldset class="mt-3">
+                            <legend class="fs-5">Make a section below</legend>
+                            <div class="radio-item-container">
+                                <div class="radio-item">
+                                    <label for="yes">
+                                        <input type="radio" id="yes" name="form2" value="yes">
+                                        <span class="error2">Yes</span>
+                                    </label>
+                                </div>
+
+                                <!-- <div class="radio-item">
+                                    <label for="no">
+                                        <input type="radio" id="no" name="form2" value="no">
+                                        <span class="error2">No</span></label>
+                                </div> -->
+                            </div>
+                            <div class="alert alert-danger" id="alert2" style="display: none;" role="alert">
+                                Please select the option
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body step" style="display: none">
+                <h2 for="" class="mb-3">
+                    About your energy usage?
+                </h2>
+
+                <div class="condition1" style="display: none;">
+                    <h3 class="mb-4">
+                        Your Gas Usage
+                    </h3>
+                    <h4 class="mb-3">Make a selection below using the sliders</h4>
+
+                    <label for="customRange1" class="form-label">How much do you spend on Gas Each Month?
+                        (Estimate)</label>
+
+                    <div class="container-range">
+                        <input type="range" class="money_slider" min="0" max="2500" value="0" step="100"
+                            id="customRange1" />
+                        <p class="value-display" id="gasValue">£ 0</p>
+                    </div>
+
+                    <label for="customRange2" class="form-label">How long is your Gas contract? (Months)</label>
+
+                    <div class="container-range">
+                        <input type="range" class="month_slider" min="0" value="0" max="60" step="12"
+                            id="customRange2" />
+                        <p class="value-display" id="gasContractValue">0 Months</p>
+                    </div>
+
+                    <div class="alert alert-danger" style="display: none;" id="alert3" role="alert">
+                        Please choose both value
+                    </div>
+
+                    <div class="text-center">
+                        <button type="button" id="button-addon2" class="action gas-claim next btn btn-outline-secondary"
+                            style="display: none;">
+                            Calculate My Claim
+                        </button>
+                    </div>
+                </div>
+
+                <div class="condition2" style="display: none;">
+                    <h3 class="mb-4">
+                        Your Electricity Usage
+                    </h3>
+                    <h4 class="mb-3">Make a selection below using the sliders</h4>
+                    <label for="customRange1" class="form-label">How much do you spend on Electricity Each Month?
+                        (Estimate)</label>
+                    <div class="container-range">
+                        <input type="range" class="money_slider" min="0" value="0" max="2500" step="100"
+                            id="customRange3" />
+                        <p class="value-display" id="eleValue">£ 0</p>
+                    </div>
+                    <label for="customRange2" class="form-label">How long is your Electic contract? (Months)</label>
+
+                    <div class="container-range">
+                        <input type="range" class="month_slider" min="0" value="0" max="60" step="12"
+                            id="customRange4" />
+                        <p class="value-display" id="electricContractValue">0 Months</p>
+                    </div>
+                    <div class="alert alert-danger" style="display: none;" id="alert4" role="alert">
+                        Please choose both value
+                    </div>
+                    <div class="text-center">
+                        <button type="button" id="button-addon2" class="action next btn btn-outline-secondary">
+                            Calculate My Claim
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card-body step" style="display: none">
+                <h1 class="fw-bold mb-4">
+                    Congratulations You Might Have a Claim
+                </h1>
+
+                <div>
+                    <h4 class="mb-4">Your Claim Is Estimated As:</h3>
+                        <div class="indivisul_price">
+                            <p class="fs-1 text-center value-display"><span class="priceone fs-1"> 0.00</span><span
+                                    class="priceEOne fs-1"></span></p>
+                        </div>
+                        <div class="bothprice">
+                            <p class="fs-1 text-center value-display"><span class="bothprice1 fs-1"> 0.00</span></p>
+                        </div>
+                </div>
+
+                <form class="claim mt-5">
+                    <h4 class="mb-4">Make My Claim</h4>
+                    <label for="" class="fs-4">Title<b style="color: #dc3545">*</b></label>
+                    <select class="form-select p-3 fs-5" id="name_title" aria-label="Default select example" required>
+                        <option selected>Mr</option>
+                        <option value="1">Mrs</option>
+                        <option value="2">Ms</option>
+                        <option value="3">Miss</option>
+                        <option value="3">Doctor</option>
+                        <option value="3">Other</option>
+                    </select>
+
+                    <div class="form-group mt-2 row">
+                        <div class="col-md-6">
+                            <label for="fname" class="fs-5">First Name<b style="color: #dc3545">*</b></label>
+                            <input type="text" name="name" class="form-control p-3" id="fname"
+                                placeholder="Your first name" required />
+                            <div class="alert alert-danger mt-1" style="display: none;" id="fname_alert" role="alert">
+                                Please enter your first name
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lname" class="fs-5">Last Name<b style="color: #dc3545">*</b></label>
+                            <input type="text" class="form-control p-3 " id="lname" placeholder="Your last name"
+                                required />
+                            <div class="alert alert-danger mt-1" style="display: none;" id="lname_alert" role="alert">
+                                Please enter your last name
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="exampleInputEmail1" class="fs-5">Your Company<b style="color: #dc3545">*</b></label>
+                        <input type="text" id="company" class="form-control p-3" placeholder="Your company name"
+                            required>
+                        <div class="alert alert-danger mt-1" style="display: none;" id="company_alert" role="alert">
+                            Please enter your company name
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="exampleInputEmail1" class="fs-5">Your job title<b
+                                style="color: #dc3545">*</b></label>
+                        <input id="job_title" type="text" class="form-control p-3" placeholder="Your Job title"
+                            required>
+                        <div class="alert alert-danger mt-1" style="display: none;" id="job_alert" role="alert">
+                            Please select your Job title
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="card-body step" style="display: none">
+                <h2 class="fw-bold">
+                    Your Contact Details
+                </h2>
+                <p class="fs-5">We will need to keep in touch and update you about the progress of your claim. Which is
+                    why we ask
+                    for your email address and mobile number. We will also send you a text with your case number as a
+                    reference.</p>
+                <div class="form-group mt-4">
+                    <h4 class="">Email Address <b style="color: #dc3545">*</b></h4>
+                    <label for="exampleInputEmail1">So we can keep you up to date via email</label>
+                    <input type="email" class="form-control p-3 mt-2" id="email_input" aria-describedby="emailHelp"
+                        placeholder="Enter Your Email">
+                    <div class="alert alert-danger mt-1" style="display: none;" id="email_alert" role="alert">
+                        Please enter your email
+                    </div>
+                </div>
+
+                <div class="form-group mt-4">
+                    <h4 class="">Mobile telephone number <b style="color: #dc3545">*</b></h4>
+
+                    <label for="telephone">So we can keep you up to date about your claim via SMS or WhatsApp</label>
+                    <input type="tel" class="form-control p-3 mt-2" id="telephone" aria-describedby="telephone"
+                        placeholder="Enter Your Number">
+                    <div class="alert alert-danger mt-1" style="display: none;" id="telephone_alert" role="alert">
+                        Please enter your telephone number
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-body step" style="display: none">
+                <h4 class="text-primary">This is the final step for your claim</h4>
+                <h1 class="fw-bold">Sign and complete</h1>
+                <p>Panoserve work with a panel of law firms specialising in energy mis-selling on a no win no fee basis.
+                    My signing below you are agreeing for us to contact you and investigate your potential energy claim,
+                    that could be worth £10,000s.</p>
+                <h4 class="text-primary">Your signature <b style="color: #dc3545">*</b></h4>
+                <p>Please keep your signature in the boundaries of the white box below
+                </p>
+
+                <div id="signature-container">
+                    <canvas id="signature-pad" class="img-fluid" style="border: 2px solid;" width="600"
+                        height="300"></canvas>
+                    <p class="sign-alert">Please Sign in the white box above to complete</p>
+                    <button class="d-block btn-primary fw-bold p-2" id="clear-button"
+                        style="background: #6c757d!important;">Reset Signature</button>
+                </div>
+                <textarea name="" id="" cols="" rows="4" readonly class="fw-bold py-2 mt-2 px-3" style="width: 100%;">
+By affixing your signature above, you acknowledge that you have read and understand the engagement letter. This document gives Panoseve content to contact your energy company on your behalf in order to acquire accurate information relating to your energy supply and potential hidden commissions.</textarea>
+            </div>
+
+            <div class="card-body step" style="display: none">
+                <h4 class="text-primary">Your claim has been submitted</h4>
+                <h1 class="fw-bold">Thank You</h1>
+                <p class="fs-5">You have successfully submitted your business energy claim, and we have received your
+                    information.</p>
+                <h4 class="text-primary">What happens Next?</h4>
+                <p class="fs-5">One of our claims investigators will be in touch regarding the next steps of your claim.
+                    All you have to do now is sit back and we will be in touch.</p>
+            </div>
+
+            <div class="card-footer">
+                <button class="action btn-uniqe next btn btn-secondary float-end" style="display: none">
+                    Next
+                </button>
+                <button class="action btn-uniqe2 btn btn-secondary float-end" id="none" style="display: none">
+                    Next
+                </button>
+                <button class="action btn-uniqe3 btn btn-secondary float-end" id="none" style="display: none">
+                    Next
+                </button>
+                <button class="action back" style="display: none">
+                    <i class="fas fa-chevron-left"></i> &nbsp; Go back
+                </button>
+
+                <button class="action submit_o btn btn-success" style="display: none">
+                    Proceed without signing
+                </button>
+                <button class="action submit btn btn-success float-end" id="save-button"
+                    style="display: none;margin-top: 15px;">
+                    I Agree
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="loader-container text-center text-white">
+        <div class="loader">
+            <div class="dollar-icon"></div>
+        </div>
+        <div class="loader-title">
+            Calculating your claim
+        </div>
+        <p>Please wait whilst we check our databases</p>
+    </div>
+    <div class="loader2" id="loader"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/rangeslider-pure@0.4.4/dist/range-slider.min.js"></script>
+    <script>
+        // Function to get URL parameters by name
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Retrieve the values of the desired URL parameters
+        const utmSource = getParameterByName('utm_source');
+        const utmMedium = getParameterByName('utm_medium');
+        const utmCampaign = getParameterByName('utm_campaign');
+        const utmTerm = getParameterByName('utm_term');
+        const utmContent = getParameterByName('utm_content');
+        const refCode = getParameterByName('ref_code');
+
+        // Use the retrieved parameter values as needed
+        console.log('UTM Source:', utmSource);
+        console.log('UTM Medium:', utmMedium);
+        console.log('UTM Campaign:', utmCampaign);
+        console.log('UTM Term:', utmTerm);
+        console.log('UTM Content:', utmContent);
+        console.log('UTM Refcode:', refCode);
+        // ... and so on
+    </script>
+
+
+    <script src="./js/confetti.js"></script>
+    <script src="./js/canvas.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
