@@ -841,11 +841,12 @@ function updateBothprice() {
   $(".bothprice1").text("£ " + (parseInt(totalPrice1 + totalPrice2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")));
 }
 
-// Function to get URL parameters by name
 function getParameterByName(name) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
 }
+
+
 
 // Retrieve the values of the desired URL parameters
 

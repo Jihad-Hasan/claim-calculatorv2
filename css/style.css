@@ -613,6 +613,29 @@ label span:before {
     top: 35%;
     left: 0%;
 }
-
+.lp-pom-image-container{
+  display: none;
+}
+.lplh-58 span{
+  font-size: 35px;
+ }
+ .lplh-58 span{
+  font-size: 48px;
+ }
+ .plh-31 span{
+  font-size: 20px;
+ }
+ .banner-section img{
+  height: auto;
+ }
  }
 
+ .lplh-58 span{
+  font-size: 48px;
+ }
+ .plh-31 span{
+  font-size: 26px;
+ }
+ .banner-section img{
+  height: 400px;
+ }
