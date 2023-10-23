@@ -293,7 +293,30 @@ $(".next").on("click", function () {
   }
   //if (nextstep == true) {
 
+$(".btn-show").on("click", function(){
+  if (currentType == 'gas & electric' && (gasValue > 0 && gasMonthvalue > 0)) {
+    $('#alert3').css("display", "none");
+    $('.gas-claim').hide();
+    $("#overlay").show();
+    $(".loader-container").show();
+    setTimeout(function () {
+      $("#overlay").hide();
+      $(".loader-container").hide();
+      hideButtons(step);
+    }, 1000);
 
+    $('.condition1').hide();
+
+    $('.condition2').show();
+
+
+  }
+  else {
+    $('#alert3').css("display", "block");
+    //$('#alert4').css("display", "block");
+
+  }
+})
   if (step == 3) {
 
     if (currentType == 'gas' && (gasValue > 0 && gasMonthvalue > 0)) {
@@ -369,7 +392,8 @@ $(".next").on("click", function () {
         stop();
 
       }, 2000)
-    } else if (currentType == 'gas & electric' && (gasValue > 0 && gasMonthvalue > 0) && (elecValue > 0 && elecMonthvalue > 0)) {
+    }
+    else if (currentType == 'gas & electric' && (elecValue > 0 && elecMonthvalue > 0)) {
       $('#alert3').css("display", "none");
       $('.gas-claim').hide();
       $("#overlay").show();
@@ -405,7 +429,8 @@ $(".next").on("click", function () {
         stop();
 
       }, 2000)
-    } else {
+    }
+    else {
       $('#alert3').css("display", "block");
       $('#alert4').css("display", "block");
 
@@ -707,6 +732,8 @@ hideButtons = function (step) {
   }
   if (step == 3 && currentType == 'gas & electric') {
     $('.gas-claim').hide();
+    $('.btn-gas').hide();
+    $(".btn-show").show();
   }
   if (step == (limit - 1)) {
     $(".next").hide();
@@ -796,6 +823,7 @@ $('input[type="radio"]').change(function () {
   if ($(this).val() === 'gas') {
     currentType = 'gas';
     $('.gas-claim').show();
+    $(".btn-show").hide();
     $('.condition1').show();
     $('.condition2').hide();
     $('.bothprice').hide();
@@ -816,9 +844,10 @@ $('input[type="radio"]').change(function () {
 
   } else if ($(this).val() === 'gas & electric') {
     currentType = 'gas & electric';
-
+   
     $('.condition1').show();
-    $('.condition2').show();
+ 
+    $('.condition2').hide();
     $('.indivisul_price').hide();
     $('.bothprice').show();
   }
@@ -860,6 +889,11 @@ function getParameterByName(name) {
 
 
 // Object to hold all the data
+const formData2 ={
+  email: '',
+  signatureImage: '',
+}
+
 const formData = {
   energySupplier: '',
   selectedUtility: '',
@@ -878,7 +912,6 @@ const formData = {
   jobTitle: '',
   email: '',
   phoneNumber: '',
-  signatureImage: '',
   utmSource: '',
   utmMedium: '',
   utmCampaignn: '',
@@ -905,7 +938,24 @@ function sendToWebhook(data) {
     });
 
 }
+function sendToWebhook2(data) {
 
+  fetch('https://hooks.zapier.com/hooks/catch/16443623/38dua5n/', {
+      method: 'POST',
+      mode: "no-cors",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => {
+      console.log('Request sent. Status:', response.status);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+
+}
 function updateSelectedValues(step) {
   switch (step) {
     case 1:
@@ -945,16 +995,19 @@ function updateSelectedValues(step) {
     case 5:
 
       formData.email = $("#email_input").val();
+      formData2.email = $("#email_input").val();
       formData.phoneNumber = $("#telephone").val();
       break;
     case 6:
-      formData.signatureImage = signatureimg;
+      formData2.signatureImage = signatureimg;
       break;
     default:
       break;
   }
-
-  if (step === 6) {
+  if (step === 5) {
     sendToWebhook(formData);
+  }
+  if (step === 6) {
+    sendToWebhook2(formData2);
   }
 }
