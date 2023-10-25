@@ -132,7 +132,7 @@ h1 {
   animation: spin 2s linear infinite;
   position: absolute;
   display: none;
-  top: 40%;
+  top: 30%;
   left: 50%;
   margin-top: -15px;
   margin-left: -15px;
@@ -174,7 +174,7 @@ h1 {
   align-items: center;
   position: absolute;
   top: 40%;
-  left: 40%;
+  left: 30%;
   display: none;
   z-index: 999999;
 }
@@ -530,6 +530,15 @@ label span:before {
 
 
 
+.lplh-58 span{
+  font-size: 48px;
+ }
+ .plh-31 span{
+  font-size: 26px;
+ }
+ .banner-section img{
+  height: 400px;
+ }
 
 
 @media (max-width: 1399.98px) { 
@@ -628,14 +637,4 @@ label span:before {
  .banner-section img{
   height: auto;
  }
- }
-
- .lplh-58 span{
-  font-size: 48px;
- }
- .plh-31 span{
-  font-size: 26px;
- }
- .banner-section img{
-  height: 400px;
  }

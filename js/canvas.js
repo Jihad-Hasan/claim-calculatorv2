@@ -4,8 +4,6 @@ var clearButton = document.getElementById('clear-button');
 var saveButton = document.getElementById('save-button');
 var signAlert = document.querySelector('.sign-alert');
 var drawing = false;
-// Example: Set canvas width and height based on window size
-//cvs.width = window.innerWidth;
 
 cvs.addEventListener('mousedown', function (e) {
     drawing = true;
